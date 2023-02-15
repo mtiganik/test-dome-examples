@@ -1,8 +1,8 @@
-
+import FocusableInput from './ex1-focusableInput'
 function App() {
   return (
     <div className="App">
-<p>Hello world</p>
+      <FocusableInput shouldFocus={true}/>
     </div>
   );
 }
