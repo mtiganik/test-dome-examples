@@ -1,10 +1,10 @@
 import React from 'react'
 
 class Username extends React.Component {
+  
     state = { value: "" };
   
     changeValue(value) {
-      //console.log("changed to " + value)
       this.setState({ value });
     }
   
@@ -21,6 +21,7 @@ class Username extends React.Component {
     function clickHandler() {
       //console.log(text)
       val.current = text
+      Username.setState({val})
       //console.log(param)
     }
   
@@ -28,7 +29,7 @@ class Username extends React.Component {
       <div>
         <button onClick={clickHandler}>Change Username</button>
         <input type="text" value={text} onChange={(e) => setText(e.target.value)}/>
-        <Username state={val}/>
+        <Username ref={Username => {window.Username = Username}}/>
       </div>
     );
   }
